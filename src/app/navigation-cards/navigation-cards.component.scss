@@ -1,58 +1,84 @@
 .card-container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-    gap: 20px;
-  }
-  
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  gap: 20px;
+  flex-wrap: wrap; /* Allows cards to wrap on smaller screens */
+}
+
+.card {
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  width: 300px;
+  min-height: 500px;
+  overflow: hidden;
+  transition: transform 0.3s, box-shadow 0.3s;
+  text-align: center;
+}
+
+.card:hover {
+  transform: scale(1.05);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+}
+
+.card-img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+}
+
+.card-content {
+  padding: 15px;
+}
+
+.card-content h3 {
+  font-size: 1.5em;
+  margin-bottom: 10px;
+}
+
+.card-content p {
+  color: #666;
+  font-size: 1em;
+}
+
+.card-btn {
+  background-color: #007bff;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.card-btn:hover {
+  background-color: #0056b3;
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
   .card {
-    background-color: #fff;
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-    width: 300px;
-    min-height: 500px;
-    overflow: hidden;
-    transition: transform 0.3s, box-shadow 0.3s;
-    text-align: center;
+    width: 90%; /* Use a larger width percentage on smaller screens */
+    min-height: auto; /* Allow card height to adjust */
   }
-  
-  .card:hover {
-    transform: scale(1.05);
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+}
+
+@media (max-width: 480px) {
+  .card {
+    width: 95%; /* Make cards full width on very small screens */
   }
-  
-  .card-img {
-    width: 100%;
-    height: 200px;
-    object-fit: cover;
-  }
-  
-  .card-content {
-    padding: 15px;
-  }
-  
+
   .card-content h3 {
-    font-size: 1.5em;
-    margin-bottom: 10px;
+    font-size: 1.3em; /* Slightly smaller font size */
   }
-  
+
   .card-content p {
-    color: #666;
-    font-size: 1em;
+    font-size: 0.9em; /* Slightly smaller font size */
   }
-  
+
   .card-btn {
-    background-color: #007bff;
-    color: white;
-    padding: 10px 20px;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: background-color 0.3s;
+    padding: 8px 16px; /* Adjust button size */
   }
-  
-  .card-btn:hover {
-    background-color: #0056b3;
-  }
-  
+}
